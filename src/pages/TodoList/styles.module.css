@@ -1,0 +1,6 @@
+.ul{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

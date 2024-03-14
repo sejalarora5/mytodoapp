@@ -19,11 +19,15 @@ function TodoItem({ id, title, description, completed }: props) {
     return (
         <li className={`listItem ${completed ? 'completed' : ''}`}>
             <div className={styles.container}>
+                <div>
                 <span className={styles.spanStyle} key={id}>
                     <input type='checkbox' className={styles.inputField} checked={completed} onChange={handleCompleteToggle}/>
                     {title}
                 </span>
-                <button className='btn btn-secondary' onClick={handleDeleteTodo}>Delete</button>
+                </div>
+                <div>
+                <button className={styles.button} onClick={handleDeleteTodo}>Delete</button>
+                </div>
             </div>
         </li>
     )

@@ -1,6 +1,7 @@
 .listItem {
     padding: 0.75rem 1.25rem;
     margin-bottom: -1px;
+    display: flex;
     border: 1px solid rgba(0, 0, 0, 0.125);
     background-color: #fff;
   }
@@ -15,7 +16,16 @@
 .spanStyle {
     display: flex;
     align-items: center;
+    color: white;
+
 }
 .inputField{
     margin-right: 3px;
+}
+.button{
+    width: auto;
+    background-color: thistle; 
+    display: flex;
+    border-radius: 5px;
+    padding: 10px 24px;
 }

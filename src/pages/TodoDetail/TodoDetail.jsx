@@ -13,9 +13,9 @@ function TodoDetail() {
         dispatch(updateTodo({ id: parseInt(id), title, description }));
     };
 
-    if (!todo) {
-        return <div>No todo found with id {id}</div>;
-    }
+    // if (!todo) {
+    //     return <div>No todo found with id {id}</div>;
+    // }
 
     return (
         <div>
