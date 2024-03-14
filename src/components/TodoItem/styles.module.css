@@ -1,4 +1,21 @@
+.listItem {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #fff;
+  }
+  
+  .listItem.completed {
+    background-color: #d4edda; /* Similar to Bootstrap's list-group-item-success */
+  }
+.container{
+    display: flex;
+    justify-content: space-between;
+}
 .spanStyle {
     display: flex;
     align-items: center;
+}
+.inputField{
+    margin-right: 3px;
 }

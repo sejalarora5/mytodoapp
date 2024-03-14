@@ -1,5 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './styles.module.css'
+import { deleteTodo, toggleComplete } from '../../redux/slices/todoSlice';
 type props = {
     id: number,
     title: string, 
@@ -7,14 +9,21 @@ type props = {
     completed: boolean
 }
 function TodoItem({ id, title, description, completed }: props) {
+    const dispatch = useDispatch();
+    const handleCompleteToggle = () => {
+		dispatch(toggleComplete({ id: id, completed: !completed }));
+	}
+    const handleDeleteTodo = () => {
+		dispatch(deleteTodo({ id: id}));
+	}
     return (
-        <li className={`list-group-item ${completed && 'list-group-item-success'}`}>
-            <div className='d-flex justify-content-between'>
+        <li className={`listItem ${completed ? 'completed' : ''}`}>
+            <div className={styles.container}>
                 <span className={styles.spanStyle} key={id}>
-                    <input type='checkbox' className='mr-3' checked={completed}></input>
+                    <input type='checkbox' className={styles.inputField} checked={completed} onChange={handleCompleteToggle}/>
                     {title}
                 </span>
-                <button className='btn btn-danger'>Delete</button>
+                <button className='btn btn-secondary' onClick={handleDeleteTodo}>Delete</button>
             </div>
         </li>
     )

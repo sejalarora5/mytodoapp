@@ -10,6 +10,7 @@ import TodoList from './pages/TodoList/TodoList';
 import TodoForm from './components/TodoForm/TodoForm';
 import { persistor, store } from './redux/store/store';
 import {PersistGate} from 'redux-persist/integration/react';
+import TodoDetail from './pages/TodoDetail/TodoDetail';
 
 function App() {
   const Layout = ({ children }: any) => {
@@ -29,6 +30,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/about' element={<About />} />
               <Route path='/todolist' element={<TodoList />} />
+              <Route path='/todo/:id' element={<TodoDetail />} />
               <Route path='/todoform' element={<TodoForm />} />
               <Route path='/cardContainer' element={<CardContainer />} />
             </Routes>
@@ -45,9 +47,7 @@ export default App;
 // Create a parent component named TodoList that manages a list of todos.
 // Lift the state of todos from TodoForm to TodoList and pass todos as props to TodoForm and CardContainer.
 // Create routes for the home page, about page, and a dynamic route for individual todo items.
-// Set up Redux in your application using Redux Toolkit.
 // Create a slice for managing todo state, including actions and reducers for adding, deleting, and updating todos
-// Connect TodoList component to Redux store using useSelector and useDispatch hooks.
 // Dispatch actions to add, delete, and update todos from the TodoList component.
 // Use CSS modules or styled-components to style your components.
 // Ensure responsive design and accessibility considerations.
